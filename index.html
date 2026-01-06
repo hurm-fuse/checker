@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenZ Skill Earnings Test 💰</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      background: #121212;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -15,31 +17,73 @@
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
+      transition: background 0.5s;
     }
-    h1 { color: #ff4d4d; }
+
+    h1 {
+      color: #ff4d4d;
+      text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
+      animation: pulse 2s infinite;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; }
+      50% { text-shadow: 0 0 20px #ff6f6f, 0 0 30px #ff6f6f; }
+    }
+
     select, input, button {
-      padding: 10px;
+      padding: 12px 15px;
       margin: 10px;
-      border-radius: 5px;
+      border-radius: 12px;
       border: none;
       font-size: 16px;
+      outline: none;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+
+    select:hover, input:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ff99;
+    }
+
     button {
       background: #ff4d4d;
       color: white;
+      font-weight: bold;
       cursor: pointer;
+      box-shadow: 0 0 15px #ff4d4d;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ff6f6f;
+    }
+
     #result {
-      margin-top: 20px;
-      font-size: 20px;
+      margin-top: 30px;
+      font-size: 22px;
       color: #00ff99;
       white-space: pre-line;
       text-align: center;
+      background: rgba(0,255,153,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ff99;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 15px #00ff99; }
+      50% { box-shadow: 0 0 25px #00ff99; }
+      100% { box-shadow: 0 0 15px #00ff99; }
     }
   </style>
 </head>
 <body>
   <h1>GenZ Skill Earnings Test 💰</h1>
+
   <label for="skill">Choose your skill:</label>
   <select id="skill">
     <option value="Coding">Coding / Software Dev</option>
@@ -70,18 +114,17 @@
         return;
       }
 
-      // High-earning multipliers for real-world GenZ skills ($ per hour)
       const skillMultiplier = {
-        "Coding": 30,             // $30/hour
-        "Gaming": 25,             // $25/hour
-        "YouTube": 35,            // $35/hour
-        "Freelancing": 40,        // $40/hour
-        "App Development": 45,    // $45/hour
-        "Digital Marketing": 35,  // $35/hour
-        "Stock Trading": 50,      // $50/hour
-        "Graphic Design": 30,     // $30/hour
-        "Fitness Coaching": 25,   // $25/hour
-        "Content Writing": 25     // $25/hour
+        "Coding": 30,
+        "Gaming": 25,
+        "YouTube": 35,
+        "Freelancing": 40,
+        "App Development": 45,
+        "Digital Marketing": 35,
+        "Stock Trading": 50,
+        "Graphic Design": 30,
+        "Fitness Coaching": 25,
+        "Content Writing": 25
       };
 
       const multiplier = skillMultiplier[skill] || 20;
