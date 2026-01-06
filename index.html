@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
   <title>Solvilora - Skill Earnings Test 💰 | Estimate Your Monthly Income</title>
   <meta name="google-site-verification" content="shQyQlCkETFhygjZ-Qx2uEJcpBnkClD9BLxYXk6Emv0" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -15,7 +14,6 @@
     content="Skill earnings, Freelancing income, Coding salary, YouTube earnings, Gaming income, Online money, Monthly earnings calculator">
   <meta name="author" content="Hurm Fuse">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -59,15 +57,8 @@
 
     /* 🎯 ANIMATION */
     @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     /* 🧾 LABEL */
@@ -80,9 +71,7 @@
     }
 
     /* 🧩 INPUTS */
-    select,
-    input,
-    button {
+    select, input, button {
       width: 100%;
       max-width: 340px;
       padding: 14px 16px;
@@ -94,8 +83,7 @@
     }
 
     /* 🧠 INPUT FOCUS */
-    select:focus,
-    input:focus {
+    select:focus, input:focus {
       border-color: #3498db;
       box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
     }
@@ -139,46 +127,18 @@
       transform: scale(1);
     }
 
-    /* 📱 SMALL DEVICES */
     @media (max-width: 480px) {
-      body {
-        padding: 12px;
-      }
-
-      h1 {
-        margin: 20px 0;
-      }
-
-      #result {
-        font-size: 1rem;
-        padding: 18px;
-      }
-    }
-
-    /* 🖥️ LARGE SCREENS */
-    @media (min-width: 1024px) {
-      body {
-        padding: 30px;
-      }
+      body { padding: 12px; }
+      h1 { margin: 20px 0; }
+      #result { font-size: 1rem; padding: 18px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔥 TOP BANNER AD 🔥 -->
   <div class="ad-top">
-    <script>
-      atOptions = {
-        'key': '6e14323b532d8e7fe5099c6d99764567',
-        'format': 'iframe',
-        'height': 90,
-        'width': 728,
-        'params': {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/6e14323b532d8e7fe5099c6d99764567/invoke.js"></script>
-  </div>
+    </div>
 
   <h1>Solvilora - Skill Earnings Test 💰</h1>
 
@@ -194,6 +154,46 @@
     <option value="Graphic Design">Graphic Design</option>
     <option value="SEO Specialist">SEO Specialist</option>
     <option value="UX/UI Design">UX/UI Design</option>
+    <option value="Video Editing">Video Editing</option>
+    <option value="Data Science">Data Science</option>
+    <option value="Cybersecurity">Cybersecurity</option>
+    <option value="Copywriting">Copywriting</option>
+    <option value="Social Media Manager">Social Media Manager</option>
+    <option value="Blockchain Developer">Blockchain Developer</option>
+    <option value="AI Specialist">AI / ML Specialist</option>
+    <option value="Content Writing">Content Writing</option>
+    <option value="E-commerce Ops">E-commerce Operations</option>
+    <option value="Virtual Assistant">Virtual Assistant</option>
+    <option value="Online Tutoring">Online Tutoring</option>
+    <option value="Podcasting">Podcasting</option>
+    <option value="Affiliate Marketing">Affiliate Marketing</option>
+    <option value="Dropshipping">Dropshipping</option>
+    <option value="3D Modeling">3D Modeling</option>
+    <option value="Animation">2D/3D Animation</option>
+    <option value="Cloud Architect">Cloud Architect</option>
+    <option value="Translation">Translation Services</option>
+    <option value="Voiceover Artist">Voiceover Artist</option>
+    <option value="Photography">Professional Photography</option>
+    <option value="Music Production">Music Production</option>
+    <option value="Mobile Game Dev">Mobile Game Dev</option>
+    <option value="Interior Design">Interior Design</option>
+    <option value="Proofreading">Proofreading & Editing</option>
+    <option value="Crypto Trading">Crypto Trading</option>
+    <option value="Cyber Analyst">Cyber Security Analyst</option>
+    <option value="Ghostwriting">Ghostwriting</option>
+    <option value="Project Management">Project Management</option>
+    <option value="Financial Advisor">Financial Advisor</option>
+    <option value="Email Marketing">Email Marketing</option>
+    <option value="Market Research">Market Research</option>
+    <option value="Shopify Expert">Shopify Expert</option>
+    <option value="Salesforce Expert">Salesforce Consultant</option>
+    <option value="QA Tester">QA / Manual Testing</option>
+    <option value="DevOps Engineer">DevOps Engineer</option>
+    <option value="Fitness Coach">Online Fitness Coach</option>
+    <option value="Technical Writing">Technical Writing</option>
+    <option value="Legal Consulting">Legal Consulting</option>
+    <option value="Public Relations">Public Relations</option>
+    <option value="Data Entry">Advanced Data Entry</option>
   </select>
 
   <label for="hours">Hours per day (max 24):</label>
@@ -210,46 +210,43 @@
       const box = document.getElementById('result');
 
       if (isNaN(hours) || hours <= 0) {
+        box.style.background = "linear-gradient(135deg, #e74c3c, #c0392b)";
         box.innerText = "⚠️ Error:\nPlease enter valid hours (1–24).";
         box.classList.add('show');
         return;
       }
 
       if (hours > 24) {
+        box.style.background = "linear-gradient(135deg, #e74c3c, #c0392b)";
         box.innerText = "🚫 Error:\nYou cannot work more than 24 hours in a day.";
         box.classList.add('show');
         return;
       }
 
       const rates = {
-        Coding: 50,
-        Gaming: 35,
-        YouTube: 40,
-        Freelancing: 45,
-        "App Development": 55,
-        "Digital Marketing": 40,
-        "Stock Trading": 60,
-        "Graphic Design": 30,
-        "SEO Specialist": 40,
-        "UX/UI Design": 45
+        "Coding": 50, "Gaming": 35, "YouTube": 40, "Freelancing": 45, "App Development": 55,
+        "Digital Marketing": 40, "Stock Trading": 65, "Graphic Design": 30, "SEO Specialist": 42,
+        "UX/UI Design": 48, "Video Editing": 38, "Data Science": 70, "Cybersecurity": 75,
+        "Copywriting": 40, "Social Media Manager": 32, "Blockchain Developer": 85,
+        "AI Specialist": 80, "Content Writing": 25, "E-commerce Ops": 35, "Virtual Assistant": 20,
+        "Online Tutoring": 28, "Podcasting": 30, "Affiliate Marketing": 45, "Dropshipping": 50,
+        "3D Modeling": 52, "Animation": 45, "Cloud Architect": 78, "Translation": 30,
+        "Voiceover Artist": 45, "Photography": 35, "Music Production": 40, "Mobile Game Dev": 55,
+        "Interior Design": 45, "Proofreading": 22, "Crypto Trading": 60, "Cyber Analyst": 65,
+        "Ghostwriting": 40, "Project Management": 58, "Financial Advisor": 70, "Email Marketing": 38,
+        "Market Research": 35, "Shopify Expert": 50, "Salesforce Expert": 72, "QA Tester": 35,
+        "DevOps Engineer": 75, "Fitness Coach": 30, "Technical Writing": 48, "Legal Consulting": 85,
+        "Public Relations": 45, "Data Entry": 15
       };
 
-      const earning = hours * 30 * (rates[skill] || 25);
+      const ratePerHour = rates[skill] || 25;
+      const earning = Math.round(hours * 30 * ratePerHour);
 
-      box.style.background = "linear-gradient(135deg, #3498db, #2980b9)";
-      box.innerText = `Monthly Earning: $${earning}`;
+      box.style.background = "linear-gradient(135deg, #27ae60, #2ecc71)";
+      box.innerText = `Estimated Monthly Earnings:\n$${earning.toLocaleString()}`;
       box.classList.add('show');
     }
   </script>
 
-  <!-- 🔥 OTHER ADS (UNCHANGED) 🔥 -->
-  <a href="https://www.effectivegatecpm.com/g97901j3?key=9a5033791fc26f3575751d5046b17ef3"></a>
-  <script src="https://pl28416482.effectivegatecpm.com/68/b3/1c/68b31c11dc5b3ccdea2e4d303e3ec842.js"></script>
-  <script async data-cfasync="false"
-    src="https://pl28416488.effectivegatecpm.com/dcab2333475f758ba16ef387a0c5797b/invoke.js"></script>
-  <div id="container-dcab2333475f758ba16ef387a0c5797b"></div>
-  <script src="https://pl28416496.effectivegatecpm.com/0f/7e/2a/0f7e2adda204ed3f03326c469316f213.js"></script>
-
 </body>
-
 </html>
