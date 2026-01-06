@@ -6,10 +6,10 @@
   <title>GenZ Skill Earnings Test 💼💰</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Professional Clean CSS */
+    /* Professional, clean, animated CSS */
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f5f7fa;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
       color: #2c3e50;
       display: flex;
       flex-direction: column;
@@ -17,6 +17,7 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 40px 20px;
+      transition: background 0.5s;
     }
 
     h1 {
@@ -24,6 +25,12 @@
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 30px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     label {
@@ -46,7 +53,8 @@
 
     select:hover, input:hover {
       border-color: #2980b9;
-      box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+      box-shadow: 0 0 10px rgba(41, 128, 185, 0.3);
+      transform: scale(1.05);
     }
 
     button {
@@ -57,23 +65,33 @@
       width: 270px;
       border: none;
       box-shadow: 0 4px 12px rgba(41,128,185,0.3);
+      transition: all 0.3s ease;
     }
 
     button:hover {
       background-color: #3498db;
-      box-shadow: 0 6px 15px rgba(41,128,185,0.4);
+      box-shadow: 0 6px 20px rgba(41,128,185,0.5);
+      transform: scale(1.05);
     }
 
     #result {
       margin-top: 30px;
       font-size: 20px;
-      color: #2c3e50;
-      background-color: #ecf0f1;
+      color: #fff;
+      background: linear-gradient(135deg, #3498db, #2980b9);
       padding: 20px 30px;
       border-radius: 15px;
-      width: 300px;
+      width: 320px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(41,128,185,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    #result.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -116,13 +134,14 @@
     function generateEarnings() {
       const skill = document.getElementById('skill').value;
       const hoursPerDay = parseFloat(document.getElementById('hours').value);
+      const resultBox = document.getElementById('result');
 
       if(isNaN(hoursPerDay) || hoursPerDay <= 0){
-        document.getElementById('result').innerText = "⚠️ Please enter valid hours per day!";
+        resultBox.innerText = "⚠️ Please enter valid hours per day!";
+        resultBox.classList.add('show');
         return;
       }
 
-      // Realistic earning multipliers ($/hour)
       const skillMultiplier = {
         "Coding": 50,
         "Gaming": 35,
@@ -149,8 +168,8 @@
       const multiplier = skillMultiplier[skill] || 20;
       const estimatedEarnings = hoursPerDay * 30 * multiplier; // 30 days/month
 
-      document.getElementById('result').innerText = 
-        `🎯 Skill: ${skill}\n💵 Estimated Monthly Earning: $${estimatedEarnings} approx\n✅ Keep improving your skill and consistency!`;
+      resultBox.innerText = `🎯 Skill: ${skill}\n💵 Estimated Monthly Earning: $${estimatedEarnings} approx\n✅ Stay consistent & keep improving!`;
+      resultBox.classList.add('show');
     }
   </script>
 
