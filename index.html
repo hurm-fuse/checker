@@ -1,72 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Digital Footprint Cleaner</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{background:#0b0b0b;color:#fff;font-family:Arial;display:flex;justify-content:center;align-items:center;height:100vh}
-.box{background:#121212;padding:30px;width:100%;max-width:480px;border-radius:14px}
-h1{color:#ff3b3b;text-align:center}
-input,button{width:100%;padding:12px;margin-top:15px;border-radius:8px;border:none}
-input{background:#1c1c1c;color:#fff}
-button{background:#ff3b3b;color:#fff;font-size:16px;cursor:pointer}
-.site{background:#1a1a1a;padding:10px;margin-top:10px;border-radius:8px;display:flex;justify-content:space-between}
-a{color:#ff3b3b;text-decoration:none;font-size:13px}
-img{border-radius:50%;margin-top:10px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenZ Skill Earnings Test 💰</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 { color: #ff4d4d; }
+    select, input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #ff4d4d;
+      color: white;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #00ff99;
+      white-space: pre-line;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <h1>GenZ Skill Earnings Test 💰</h1>
+  <label for="skill">Choose your skill:</label>
+  <select id="skill">
+    <option value="Coding">Coding / Software Dev</option>
+    <option value="Gaming">Gaming / Streaming</option>
+    <option value="YouTube">YouTube Content</option>
+    <option value="Freelancing">Freelancing / Upwork</option>
+    <option value="App Development">App / Game Development</option>
+    <option value="Digital Marketing">Digital Marketing</option>
+    <option value="Stock Trading">Stock / Crypto Trading</option>
+    <option value="Graphic Design">Graphic Design / Video Editing</option>
+    <option value="Fitness Coaching">Fitness / Gym Coaching</option>
+    <option value="Content Writing">Content Writing / Blogging</option>
+  </select>
 
-<div class="box">
-<h1>🧹 Digital Footprint Cleaner</h1>
-<input type="email" id="email" placeholder="📧 Enter email">
-<button onclick="scan()">🔍 Scan</button>
-<div id="out"></div>
-</div>
+  <label for="hours">Hours per week:</label>
+  <input type="number" id="hours" placeholder="Ex: 10" min="0">
 
-<script>
-// MD5 for Gravatar
-function md5(s){return CryptoJS.MD5(s.trim().toLowerCase()).toString();}
+  <button onclick="generateEarnings()">Generate Estimated Earnings 💡</button>
 
-function scan(){
-  const email=document.getElementById("email").value;
-  if(!email)return alert("Email daal bhai 😄");
+  <div id="result"></div>
 
-  const hash=md5(email);
-  document.getElementById("out").innerHTML=`
-    <p>🔎 Checking public identity leaks…</p>
+  <script>
+    function generateEarnings() {
+      const skill = document.getElementById('skill').value;
+      const hours = parseInt(document.getElementById('hours').value);
+      if(isNaN(hours) || hours <= 0){
+        document.getElementById('result').innerText = "⚠️ Please enter valid hours!";
+        return;
+      }
 
-    <div class="site">
-      <span>🖼️ Gravatar</span>
-      <a target="_blank" href="https://gravatar.com/${hash}">Open</a>
-    </div>
+      // High-earning multipliers for real-world GenZ skills ($ per hour)
+      const skillMultiplier = {
+        "Coding": 30,             // $30/hour
+        "Gaming": 25,             // $25/hour
+        "YouTube": 35,            // $35/hour
+        "Freelancing": 40,        // $40/hour
+        "App Development": 45,    // $45/hour
+        "Digital Marketing": 35,  // $35/hour
+        "Stock Trading": 50,      // $50/hour
+        "Graphic Design": 30,     // $30/hour
+        "Fitness Coaching": 25,   // $25/hour
+        "Content Writing": 25     // $25/hour
+      };
 
-    <div class="site">
-      <span>📸 Instagram</span>
-      <a target="_blank" href="https://www.instagram.com/accounts/login/">Login</a>
-    </div>
+      const multiplier = skillMultiplier[skill] || 20;
+      const estimatedEarnings = hours * multiplier;
 
-    <div class="site">
-      <span>📘 Facebook</span>
-      <a target="_blank" href="https://www.facebook.com/login/">Login</a>
-    </div>
-
-    <div class="site">
-      <span>🐦 X (Twitter)</span>
-      <a target="_blank" href="https://twitter.com/login">Login</a>
-    </div>
-
-    <div class="site">
-      <span>💼 LinkedIn</span>
-      <a target="_blank" href="https://www.linkedin.com/login/">Login</a>
-    </div>
-  `;
-}
-</script>
-
-<!-- CryptoJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
+      document.getElementById('result').innerText = `💡 Skill: ${skill}\nEstimated Monthly Earning: $${estimatedEarnings} approx`;
+    }
+  </script>
 </body>
 </html>
