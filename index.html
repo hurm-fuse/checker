@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Footprint Cleaner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background:#0b0b0b;
+      color:#fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .box {
+      background:#121212;
+      padding:30px;
+      width:100%;
+      max-width:460px;
+      border-radius:14px;
+      box-shadow:0 0 25px rgba(255,0,0,0.18);
+    }
+    h1 {
+      text-align:center;
+      color:#ff3b3b;
+    }
+    p {
+      text-align:center;
+      font-size:14px;
+      opacity:0.8;
+    }
+    input {
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      background:#1c1c1c;
+      border:none;
+      border-radius:8px;
+      color:#fff;
+      outline:none;
+    }
+    button {
+      width:100%;
+      margin-top:18px;
+      padding:12px;
+      background:#ff3b3b;
+      border:none;
+      border-radius:8px;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+    }
+    button:hover {
+      background:#ff1f1f;
+    }
+    .results {
+      margin-top:22px;
+    }
+    .site {
+      background:#1a1a1a;
+      padding:12px;
+      border-radius:8px;
+      margin-bottom:10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:14px;
+    }
+    .site a {
+      color:#ff3b3b;
+      text-decoration:none;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>🧹 Digital Footprint Cleaner</h1>
+  <p>Email ya Phone daalo aur dekho kaha-kaha account bana hai 🌐</p>
+
+  <input type="text" id="userInput" placeholder="📧 Email or 📱 Phone">
+  <button onclick="scan()">🔍 Scan Accounts</button>
+
+  <div class="results" id="results"></div>
+</div>
+
+<script>
+function scan() {
+  const input = document.getElementById("userInput").value;
+  const results = document.getElementById("results");
+
+  if(input.trim() === "") {
+    alert("Bhai email ya number daal 😄");
+    return;
+  }
+
+  results.innerHTML = `
+    <div class="site"><span>📸 Instagram</span><a href="https://www.instagram.com/accounts/login/" target="_blank">Login</a></div>
+    <div class="site"><span>📘 Facebook</span><a href="https://www.facebook.com/login/" target="_blank">Login</a></div>
+    <div class="site"><span>🐦 X (Twitter)</span><a href="https://twitter.com/login" target="_blank">Login</a></div>
+    <div class="site"><span>🎵 TikTok</span><a href="https://www.tiktok.com/login" target="_blank">Login</a></div>
+    <div class="site"><span>👻 Snapchat</span><a href="https://accounts.snapchat.com/accounts/login" target="_blank">Login</a></div>
+    <div class="site"><span>💼 LinkedIn</span><a href="https://www.linkedin.com/login" target="_blank">Login</a></div>
+    <div class="site"><span>📌 Pinterest</span><a href="https://www.pinterest.com/login/" target="_blank">Login</a></div>
+    <div class="site"><span>🎮 Discord</span><a href="https://discord.com/login" target="_blank">Login</a></div>
+    <div class="site"><span>📺 Reddit</span><a href="https://www.reddit.com/login/" target="_blank">Login</a></div>
+    <div class="site"><span>🛒 Amazon</span><a href="https://www.amazon.com/ap/signin" target="_blank">Login</a></div>
+    <div class="site"><span>📧 Google</span><a href="https://accounts.google.com/" target="_blank">Login</a></div>
+    <div class="site"><span>💀 Data Breach Check</span><a href="https://haveibeenpwned.com/" target="_blank">Check</a></div>
+  `;
+}
+</script>
+
+</body>
+</html>
