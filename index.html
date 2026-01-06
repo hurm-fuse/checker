@@ -6,7 +6,6 @@
   <title>GenZ Skill Earnings Test 💼💰</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Professional, clean, animated CSS */
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #fdfbfb, #ebedee);
@@ -123,7 +122,7 @@
     <option value="UX/UI Design">UX/UI Design</option>
   </select>
 
-  <label for="hours">Hours per day:</label>
+  <label for="hours">Hours per day (max 24):</label>
   <input type="number" id="hours" placeholder="Ex: 4" min="0" max="24">
 
   <button onclick="generateEarnings()">Generate Estimated Earnings 💡</button>
@@ -133,13 +132,18 @@
   <script>
     function generateEarnings() {
       const skill = document.getElementById('skill').value;
-      const hoursPerDay = parseFloat(document.getElementById('hours').value);
+      let hoursPerDay = parseFloat(document.getElementById('hours').value);
       const resultBox = document.getElementById('result');
 
       if(isNaN(hoursPerDay) || hoursPerDay <= 0){
         resultBox.innerText = "⚠️ Please enter valid hours per day!";
         resultBox.classList.add('show');
         return;
+      }
+
+      if(hoursPerDay > 24){
+        hoursPerDay = 24; // cap at 24
+        alert("⚠️ Hours per day cannot exceed 24. Value set to 24.");
       }
 
       const skillMultiplier = {
@@ -168,7 +172,7 @@
       const multiplier = skillMultiplier[skill] || 20;
       const estimatedEarnings = hoursPerDay * 30 * multiplier; // 30 days/month
 
-      resultBox.innerText = `🎯 Skill: ${skill}\n💵 Estimated Monthly Earning: $${estimatedEarnings} approx\n✅ Stay consistent & keep improving!`;
+      resultBox.innerText = `🎯 Skill: ${skill}\n💵 Estimated Monthly Earning: $${estimatedEarnings} approx\n✅ Stay consistent & improve daily!`;
       resultBox.classList.add('show');
     }
   </script>
