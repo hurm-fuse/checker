@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenZ Skill Earnings Test 💰</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
+      background: linear-gradient(135deg, #fceabb, #f8b500, #fcd440);
+      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,15 +20,16 @@
     }
 
     h1 {
-      color: #ff4d4d;
-      text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
-      animation: pulse 2s infinite;
+      color: #ff6f61;
+      font-size: 2.5rem;
       text-align: center;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; }
-      50% { text-shadow: 0 0 20px #ff6f6f, 0 0 30px #ff6f6f; }
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
     select, input, button {
@@ -39,50 +39,59 @@
       border: none;
       font-size: 16px;
       outline: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
     }
 
     select:hover, input:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 10px #00ff99;
+      box-shadow: 0 0 15px #ff6f61;
     }
 
     button {
-      background: #ff4d4d;
+      background: #ff6f61;
       color: white;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 15px #ff4d4d;
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 15px #ff6f61;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
     }
 
     button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 25px #ff6f6f;
+      box-shadow: 0 0 25px #ff9a85;
+      background: #ff8561;
     }
 
     #result {
       margin-top: 30px;
       font-size: 22px;
-      color: #00ff99;
+      color: #ffffff;
       white-space: pre-line;
       text-align: center;
-      background: rgba(0,255,153,0.1);
+      background: linear-gradient(135deg, #ff9a85, #ff6f61);
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00ff99;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ff9a85;
       animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
-      0% { box-shadow: 0 0 15px #00ff99; }
-      50% { box-shadow: 0 0 25px #00ff99; }
-      100% { box-shadow: 0 0 15px #00ff99; }
+      0% { box-shadow: 0 0 15px #ff6f61; }
+      50% { box-shadow: 0 0 25px #ff9a85; }
+      100% { box-shadow: 0 0 15px #ff6f61; }
     }
+
+    label {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
   </style>
 </head>
 <body>
-  <h1>GenZ Skill Earnings Test 💰</h1>
+
+  <h1>GenZ Skill Earnings Test 😎💰</h1>
 
   <label for="skill">Choose your skill:</label>
   <select id="skill">
@@ -96,10 +105,54 @@
     <option value="Graphic Design">Graphic Design / Video Editing</option>
     <option value="Fitness Coaching">Fitness / Gym Coaching</option>
     <option value="Content Writing">Content Writing / Blogging</option>
+    <option value="Photography">Photography</option>
+    <option value="Video Editing">Video Editing</option>
+    <option value="Animation">Animation / Motion Graphics</option>
+    <option value="Podcasting">Podcasting</option>
+    <option value="Voice Over">Voice Over</option>
+    <option value="Music Production">Music Production</option>
+    <option value="Social Media Management">Social Media Management</option>
+    <option value="E-commerce / Dropshipping">E-commerce / Dropshipping</option>
+    <option value="SEO Specialist">SEO Specialist</option>
+    <option value="App Store Optimization">App Store Optimization</option>
+    <option value="Language Tutoring">Language Tutoring</option>
+    <option value="UX/UI Design">UX/UI Design</option>
+    <option value="Tech Blogging">Tech Blogging</option>
+    <option value="Gaming Tutorials">Gaming Tutorials</option>
+    <option value="Stock Analysis">Stock Analysis</option>
+    <option value="Crypto Analysis">Crypto Analysis</option>
+    <option value="Handmade Crafts">Handmade Crafts</option>
+    <option value="Fashion Styling">Fashion Styling</option>
+    <option value="Fitness YouTube">Fitness YouTube</option>
+    <option value="Dance / Choreography">Dance / Choreography</option>
+    <option value="Comedy / Skits">Comedy / Skits</option>
+    <option value="Cooking / Food Content">Cooking / Food Content</option>
+    <option value="Travel Vlogging">Travel Vlogging</option>
+    <option value="Motivational Content">Motivational Content</option>
+    <option value="Pet Content">Pet Content</option>
+    <option value="Guitar / Music">Guitar / Music</option>
+    <option value="Yoga / Wellness">Yoga / Wellness</option>
+    <option value="Meditation">Meditation</option>
+    <option value="Fitness Coaching Online">Fitness Coaching Online</option>
+    <option value="Resume Writing">Resume Writing</option>
+    <option value="Freelance Writing">Freelance Writing</option>
+    <option value="Translation">Translation</option>
+    <option value="Digital Art">Digital Art</option>
+    <option value="NFT Design">NFT Design</option>
+    <option value="Mobile Game Testing">Mobile Game Testing</option>
+    <option value="Tech Reviews">Tech Reviews</option>
+    <option value="Influencer Marketing">Influencer Marketing</option>
+    <option value="Online Courses Creation">Online Courses Creation</option>
+    <option value="AI Prompt Writing">AI Prompt Writing</option>
+    <option value="Investment Planning">Investment Planning</option>
+    <option value="Virtual Assistance">Virtual Assistance</option>
+    <option value="Online Tutoring">Online Tutoring</option>
+    <option value="Email Marketing">Email Marketing</option>
+    <option value="Stock Photography">Stock Photography</option>
   </select>
 
-  <label for="hours">Hours per week:</label>
-  <input type="number" id="hours" placeholder="Ex: 10" min="0">
+  <label for="hours">Hours per day:</label>
+  <input type="number" id="hours" placeholder="Ex: 4" min="0" max="24">
 
   <button onclick="generateEarnings()">Generate Estimated Earnings 💡</button>
 
@@ -108,30 +161,37 @@
   <script>
     function generateEarnings() {
       const skill = document.getElementById('skill').value;
-      const hours = parseInt(document.getElementById('hours').value);
-      if(isNaN(hours) || hours <= 0){
-        document.getElementById('result').innerText = "⚠️ Please enter valid hours!";
+      const hoursPerDay = parseFloat(document.getElementById('hours').value);
+
+      if(isNaN(hoursPerDay) || hoursPerDay <= 0){
+        document.getElementById('result').innerText = "⚠️ Please enter valid hours per day!";
         return;
       }
 
+      // High-paying multiplier per skill ($/hour)
       const skillMultiplier = {
-        "Coding": 30,
-        "Gaming": 25,
-        "YouTube": 35,
-        "Freelancing": 40,
-        "App Development": 45,
-        "Digital Marketing": 35,
-        "Stock Trading": 50,
-        "Graphic Design": 30,
-        "Fitness Coaching": 25,
-        "Content Writing": 25
+        "Coding": 50, "Gaming": 35, "YouTube": 45, "Freelancing": 50, "App Development": 55,
+        "Digital Marketing": 40, "Stock Trading": 60, "Graphic Design": 35, "Fitness Coaching": 30,
+        "Content Writing": 30, "Photography": 25, "Video Editing": 35, "Animation": 40,
+        "Podcasting": 30, "Voice Over": 30, "Music Production": 35, "Social Media Management": 40,
+        "E-commerce / Dropshipping": 45, "SEO Specialist": 40, "App Store Optimization": 40,
+        "Language Tutoring": 25, "UX/UI Design": 45, "Tech Blogging": 35, "Gaming Tutorials": 30,
+        "Stock Analysis": 50, "Crypto Analysis": 55, "Handmade Crafts": 20, "Fashion Styling": 25,
+        "Fitness YouTube": 35, "Dance / Choreography": 25, "Comedy / Skits": 25, "Cooking / Food Content": 20,
+        "Travel Vlogging": 30, "Motivational Content": 25, "Pet Content": 20, "Guitar / Music": 25,
+        "Yoga / Wellness": 20, "Meditation": 20, "Fitness Coaching Online": 35, "Resume Writing": 25,
+        "Freelance Writing": 30, "Translation": 25, "Digital Art": 30, "NFT Design": 50,
+        "Mobile Game Testing": 30, "Tech Reviews": 40, "Influencer Marketing": 40,
+        "Online Courses Creation": 50, "AI Prompt Writing": 45, "Investment Planning": 50,
+        "Virtual Assistance": 25, "Online Tutoring": 30, "Email Marketing": 35, "Stock Photography": 25
       };
 
       const multiplier = skillMultiplier[skill] || 20;
-      const estimatedEarnings = hours * multiplier;
+      const estimatedEarnings = hoursPerDay * 30 * multiplier; // 30 days/month
 
-      document.getElementById('result').innerText = `💡 Skill: ${skill}\nEstimated Monthly Earning: $${estimatedEarnings} approx`;
+      document.getElementById('result').innerText = `🎉 Skill: ${skill}\n💵 Estimated Monthly Earning: $${estimatedEarnings} approx\n✨ Keep learning and stay consistent!`;
     }
   </script>
+
 </body>
 </html>
