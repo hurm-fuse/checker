@@ -4,22 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
   <title>Solvilora - Skill Earnings Test 💰 | Estimate Your Monthly Income</title>
-  <meta name="google-site-verification" content="shQyQlCkETFhygjZ-Qx2uEJcpBnkClD9BLxYXk6Emv0" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="Discover your potential monthly earnings based on your skills & daily hours. Coding, Gaming, Freelancing, YouTube & more!">
-  <meta name="keywords" content="Skill earnings, Freelancing income, Coding salary, YouTube earnings, Gaming income, Online money, Monthly earnings calculator">
-  <meta name="author" content="Hurm Fuse">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #fdfbfb, #ebedee);
-      color: #2c3e50;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,56 +21,35 @@
 
     h1 {
       color: #2980b9;
-      font-size: 2.5rem;
       margin: 30px 0;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    label {
-      font-weight: 600;
-      font-size: 18px;
-      margin-top: 15px;
     }
 
     select, input, button {
-      padding: 12px 15px;
+      padding: 12px;
       margin: 10px 0;
       border-radius: 10px;
-      border: 1px solid #bdc3c7;
+      width: 260px;
       font-size: 16px;
-      width: 250px;
     }
 
     button {
-      background-color: #2980b9;
+      background: #2980b9;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
-      width: 270px;
       border: none;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     #result {
-      margin-top: 30px;
+      margin-top: 25px;
       font-size: 20px;
+      background: linear-gradient(135deg, #3498db, #2980b9);
       color: white;
-      background: linear-gradient(135deg, #e74c3c, #c0392b);
       padding: 20px;
       border-radius: 15px;
       width: 320px;
       text-align: center;
-      opacity: 0;
-      transition: 0.5s;
       white-space: pre-line;
-    }
-
-    #result.show {
-      opacity: 1;
     }
 
     .ad-top {
@@ -105,42 +76,29 @@
 
   <h1>Solvilora - Skill Earnings Test 💰</h1>
 
-  <label for="skill">Choose your skill:</label>
   <select id="skill">
-    <option value="Coding">Coding / Software Dev</option>
-    <option value="Gaming">Gaming / Streaming</option>
-    <option value="YouTube">YouTube Content</option>
+    <option value="Coding">Coding</option>
+    <option value="Gaming">Gaming</option>
+    <option value="YouTube">YouTube</option>
     <option value="Freelancing">Freelancing</option>
     <option value="App Development">App Development</option>
     <option value="Digital Marketing">Digital Marketing</option>
-    <option value="Stock Trading">Stock Trading</option>
-    <option value="Graphic Design">Graphic Design</option>
-    <option value="SEO Specialist">SEO Specialist</option>
-    <option value="UX/UI Design">UX/UI Design</option>
   </select>
 
-  <label for="hours">Hours per day (max 24):</label>
-  <input type="number" id="hours" placeholder="Ex: 4">
+  <input type="number" id="hours" placeholder="Hours per day">
 
-  <button onclick="generateEarnings()">Generate Estimated Earnings 💡</button>
+  <button onclick="generateEarnings()">Generate 💡</button>
 
-  <div id="result"></div>
+  <div id="result">Monthly Earning -</div>
 
   <script>
     function generateEarnings() {
-      const skill = document.getElementById('skill').value;
-      const hours = parseFloat(document.getElementById('hours').value);
-      const box = document.getElementById('result');
+      const hours = parseFloat(document.getElementById("hours").value);
+      const skill = document.getElementById("skill").value;
+      const box = document.getElementById("result");
 
-      if (isNaN(hours) || hours <= 0) {
-        box.innerText = "⚠️ Error:\nPlease enter valid hours (1–24).";
-        box.classList.add('show');
-        return;
-      }
-
-      if (hours > 24) {
-        box.innerText = "🚫 Error:\nYou cannot work more than 24 hours in a day.";
-        box.classList.add('show');
+      if (isNaN(hours) || hours <= 0 || hours > 24) {
+        box.innerText = "Monthly Earning -";
         return;
       }
 
@@ -150,30 +108,14 @@
         YouTube: 40,
         Freelancing: 45,
         "App Development": 55,
-        "Digital Marketing": 40,
-        "Stock Trading": 60,
-        "Graphic Design": 30,
-        "SEO Specialist": 40,
-        "UX/UI Design": 45
+        "Digital Marketing": 40
       };
 
       const earning = hours * 30 * (rates[skill] || 25);
 
-      box.style.background = "linear-gradient(135deg, #3498db, #2980b9)";
-      box.innerText =
-        `🎯 Skill: ${skill}
-💵 Estimated Monthly Earning: $${earning}
-🔥 Stay consistent!`;
-      box.classList.add('show');
+      box.innerText = `🎯 ${skill}\n💵 Monthly Earning: $${earning}`;
     }
   </script>
-
-  <!-- 🔥 OTHER ADS (UNCHANGED) 🔥 -->
-  <a href="https://www.effectivegatecpm.com/g97901j3?key=9a5033791fc26f3575751d5046b17ef3"></a>
-  <script src="https://pl28416482.effectivegatecpm.com/68/b3/1c/68b31c11dc5b3ccdea2e4d303e3ec842.js"></script>
-  <script async data-cfasync="false" src="https://pl28416488.effectivegatecpm.com/dcab2333475f758ba16ef387a0c5797b/invoke.js"></script>
-  <div id="container-dcab2333475f758ba16ef387a0c5797b"></div>
-  <script src="https://pl28416496.effectivegatecpm.com/0f/7e/2a/0f7e2adda204ed3f03326c469316f213.js"></script>
 
 </body>
 </html>
